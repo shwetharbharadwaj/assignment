@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>displayMessage</title>
+  <title>justDial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <body>
+     <style>
+         
+         body{
+             
+             background-color: beige;
+             margin-top:100px;
+        
+}
+     
+   </style>
+     
+
+     
+     <script>
+  function checkforblank(){
+      if(document.getElementById("fname").value==''){
+         alert("HEY DONT LEAVE ME BLANK");
+         }  
+      else
+          
+          {
+           var a=document.getElementById("fname").value;
+           var b=document.getElementById("last").value;
+          alert("Your name is :"+a+"  " +b);
+          }
+      
+  }
+        
+     </script>
+     
+     <form method="post"  >
+     <center>
+<fieldset>
+<label>
+   firstName:
+  
+    <input type="text" id="fname" required placeholder="ENTER NAME">  </label>  <br> 
+   <label>
+  lastName:
+    
+       <input type="text" id="last" required placeholder="ENTER NAME"></label> <br>    
+   <input type="button" value="submit" onclick="checkforblank()">
+         </fieldset>  </center></form>
+    </body>
+    </head></html>
