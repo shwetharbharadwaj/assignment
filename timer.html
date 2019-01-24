@@ -1,0 +1,45 @@
+<html> 
+    <head>
+    <script rel="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js">
+var countdown;
+var countdown_number;
+
+function countdowninit() {
+    countdown_number = 31;
+    countdown_trigger();
+}
+        
+
+function countdown_trigger() {
+    if(countdown_number > 0) {
+        countdown_number--;
+        document.getElementById('countdowntext').innerHTML = countdown_number;
+        if(countdown_number > 0) {
+            countdown = setTimeout('countdown_trigger()', 1000);
+     
+        
+        }if(countdown_number < 10){
+            document.getElementById('countdowntext').style.color = "red";
+        } 
+    }
+}
+        
+function countdown_clear() {
+    clearTimeout(countdown);
+}       
+        
+        
+        
+        
+</script>
+</head>
+    <form id="form">
+<div>
+    <input type="button" value="start countdown" onclick="countdowninit()"/>
+    <input type="button" value="pause countdown" onclick="countdown_clear()"/>
+    <input type="button" value="stop countdown"  onclick="coutdown_clear()"/> 
+    <input type="reset" value="reset countdown" >
+ </div>
+    </form>
+<div id="countdowntext"></div>
+</html>

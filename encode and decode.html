@@ -1,0 +1,90 @@
+<html>
+ 
+<head>
+    <title>div</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <center><h1>DIV</h1></center> 
+<style>
+    body{
+        background-color: darkgray; 
+        font-family:rursive;
+    }
+    .btn{
+        align-content: center;
+        text-align: center;
+    }
+    .row{
+        text-align: left;
+    }
+    .textarea{
+        width=600px;
+        height=600px;
+        background-color: gainsboro;
+    }
+    
+    p{
+      text-align: left;
+    }
+    .container{ 
+        
+        background-color:whitesmoke;
+        height:350px;
+        width:600px;
+       display:inline-block;
+    }
+    .column{
+        float:left;
+        height:300px;
+        display: inline-block;
+        background-color: grey;
+        border-bottom-width: thin;
+        width: 250px;
+        margin-left: 10px;
+        overflow: auto;
+    }
+    .column2{
+        padding-right: 15px;
+        float:right;
+        height:300px;
+        margin-right: 10px;
+        border:150px;
+        width:250px;
+        display: inline-block;
+        background-color: gray;
+    }
+     </style>    
+     <script>
+    function encode(){
+        var str=document.getElementById("n1").value;
+        var enc=window.btoa(str);
+        document.getElementById("n2").value=enc;
+        
+    }
+         function decode(){
+              var str=document.getElementById("n1").value;
+             var dec=window.atob(str);
+             document.getElementById("n2").value=dec;
+         }
+     
+     
+     </script>
+     <body>
+     
+     <center><div class="container">
+<div class="row"></div>
+         <div class="column"><textarea  rows=19 , cols=30 id="n1" class="textarea"></textarea></div>
+      <div class="column2"><textarea  rows=19, cols=29 id="n2" class="textarea" readonly></textarea> 
+       <br><br>
+        <center><button onclick="decode()">decode</button>
+            <button onclick="encode()">encode</button></center></div></div>
+         
+     </center>
+     
+
+    </body>   
+    
+    
+    </head>
+
+</html>

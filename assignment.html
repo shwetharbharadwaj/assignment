@@ -20,22 +20,31 @@
            color: black;
             border-color:azure;
         }
+        .ast{
+            
+        }
      
 </style>
     <script>
-
+var i=0;
+var details=[];
+        var fname;
+        var lname;
+        var some;
+        var marrie;
+        var table;
+        var row;
+        var cell1;
+        var cell2;
+        var cell3;
+        var cell4;
+        
    function disable(){
        document.getElementById("wife").style.visibility='hidden';
    }
-    function checkforblank()
+    function checkforblank(){
             
-            /*if(document.getElementById("wife").value=='')
-            
-            {
-         alert("HEY DONT LEAVE IT BLANK");
-         } 
-            */
-                                                               }
+         
              if(document.getElementById("fname").value=='')
              
              
@@ -45,20 +54,47 @@
              }
              
 
-            if(document.getElementById("fname").value=='')
+            if(document.getElementById("lname").value=='')
     
                    { 
                        alert("enter your last name");
                   } 
-            {
-             alert("thank you")
-            }
-
-        
-    </script>
+            
+        else{
+        fname=document.getElementById("fname").value;
+        lname=document.getElementById("lname").value;
+        some=document.getElementById("some").value;
+        marrie=document.getElementById("marrie").value;    
+        alert("thank you");
+   
+    details[i]=[{
+        fname: fname,
+        lname:lname,
+        some:some,
+        marrie:marr
+    }];
+            i=i+1;
+    }}
+function view(){  
+ table = document.getElementById("myTable");
+ row = table.insertRow(1);
+    
+    var cell1 = row.insertCell(i);
+  var cell2 = row.insertCell(i);
+    var cell3 = row.insertCell(i);
+  var cell4 = row.insertCell(i);
+    cell1.innerHTML= marrie;
+     cell2.innerHTML= some;
+     cell3.innerHTML= lname;
+     cell4.innerHTML= fname;
+    
+ 
+  }
+         
+            </script>
        <body>
 
-   <table class="gest" align="center" cellpadding = "10" border="2px">
+   <table id=table class="gest" align="center" cellpadding = "10" border="2px">
     <form id=myForm method="post">
     <tr>
 <td>FIRST NAME</td>
@@ -74,15 +110,15 @@
     <tr>
 <td>GENDER</td>
 <td>
-Male <input type="radio" name="Gender" value="Male">
-Female <input type="radio" name="Gender" value="Female" >
+Male <input type="radio" name="Gender" id="some" value="Male">
+Female <input type="radio" name="Gender" id="some" value="Female" >
 </td>
 </tr>           
   <tr>
 <td>MARITAL STATUS</td>
 <td>
-Married<input type="radio" name="married" value="marr" >
-Unmarried<input type="radio"name="married" value="unmarri" id="marri" onclick="disable()">
+Married<input type="radio" name="married" id="marrie" value="Married" >
+Unmarried<input type="radio"name="married" value="Unmarried" id="marrie" onclick="disable()">
 </td>
 </tr>           
  <tr>
@@ -107,7 +143,22 @@ Unmarried<input type="radio"name="married" value="unmarri" id="marri" onclick="d
        <td> <input type="reset" value="reset">
         </td>
         </form>  
-    </table>
-    </body>
-    </head>
+    
+           </table>
+           
+           
+    <br><br><br>
+           
+  <center> <button onclick="view()"> view</button></center><br><br>
+   <center><table id="myTable" class="gest" align="center" cellpadding = "10" border="2px" >
+  <thead>
+    <td>First name</td>
+    <td>Last name</td>
+      <td>gender</td>
+      <td>marital</td>
+</thead>  
+</table> 
+</center>
+</body>
+</head>
 </html>
