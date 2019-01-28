@@ -1,0 +1,28 @@
+<DOCTYPE html>
+<html>
+ <head>
+ <title>read a json file</title> 
+     <meta charset="utf-8">
+<script>
+    
+function readdata()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(xhttp.readyState==4 && xhttp.status==200)
+            {
+                var   jobj=JSON.parse(xhttp.response);
+                document.getElementById("div").innerHTML = jobj.name;
+                
+            }
+        };
+        xhttp.open("GET","data.json",true);
+        xhttp.send();
+    }
+</script>     
+    
+</head>
+    <body>
+    <input type="button" name="name" onclick="readdata()" value="Click">
+    <div id="div"></div>    
+    </body>

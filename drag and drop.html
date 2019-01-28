@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+    
+    body{
+        
+      background-image: url(ga.jpg);
+    }    
+.div1 {
+  width: 250px;
+  height: 100px;
+  padding: 40px;
+  border: 1px solid black;
+    float:left;
+    
+}
+    .div2{
+ width: 250px;
+  height: 70px;
+  padding: 40px;
+  border: 1px solid black;
+    float:left;
+    margin-top: 150px;
+    padding-top: 30px;    
+    }
+</style>
+<script>
+function allow(e) {
+  e.preventDefault();
+}
+
+function drag(e) {
+  e.dataTransfer.setData("ggwp", e.target.id);
+    
+}
+
+function drop(e) {
+  e.preventDefault();
+  var data = e.dataTransfer.getData("ggwp");
+  e.target.appendChild(document.getElementById(data));
+    if(document.getElementById("drag3")!=document.getElementById("animal")){
+    ondrop(event).style.disable;
+    }
+if(document.getElementById("drag1")!=document.getElementById("name")){
+}
+}
+    
+</script>
+</head>
+<body>
+    <div id="name" class="div1" ondrop="drop(event)" ondragover="allow(event)">NAME</div>
+    <div id="place" class="div1" ondrop="drop(event)" ondragover="allow(event)">PLACE</div>
+    <div id="animal" class="div1" ondrop="drop(event)" ondragover="allow(event)">ANIMAL</div>
+    <div id="thing" class="div1" ondrop="drop(event)" ondragover="allow(event)">THING</div> 
+    <br> <br> <br> <br>
+       <div class="div2"><img id="drag3"src="animal.jpg" ondragstart="drag(event)"width="200px" height="100px"></div>
+     <div class="div2"><img id="drag4"src="telephone.jpg" ondragstart="drag(event)"width="200px" height="90px"></div>
+      <div class="div2"><img id="drag1" src ="name.png" ondragstart="drag(event)" width="100px"></div>
+        <div class="div2"><img id="drag2"src="burj.jpg" ondragstart="drag(event)"width="180px" height="90px"></div>
+
+    
+    
+</body>
+</html>
